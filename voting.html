@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Eligibility Checker</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .card { max-width: 400px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .input-group { margin-bottom: 15px; }
+        input { padding: 8px; width: 100%; box-sizing: border-box; }
+        button { padding: 10px; width: 100%; background: #007BFF; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        #result { margin-top: 15px; font-weight: bold; }
+        .eligible { color: green; }
+        .underage { color: red; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Voting Eligibility</h2>
+    <div class="input-group">
+        <label for="birthDate">Enter your Date of Birth:</label>
+        <input type="date" id="birthDate">
+    </div>
+    <button onclick="verifyEligibility()">Check Status</button>
+    <div id="result"></div>
+</div>
+
+<script>
+function verifyEligibility() {
+    const dateInput = document.getElementById("birthDate").value;
+    const resultDiv = document.getElementById("result");
+    
+    if (!dateInput) {
+        resultDiv.className = "";
+        resultDiv.innerText = "Please select a valid date.";
+        return;
+    }
+
+    const birthDate = new Date(dateInput);
+    const today = new Date();
+    
+    // Calculate exact age difference
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    
+    // Adjust age if birthday hasn't occurred yet this year
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+
+    const votingAge = 18;
+
+    // Check age logic
+    if (age >= votingAge) {
+        resultDiv.className = "eligible";
+        resultDiv.innerText = `✅ Access Granted. You are ${age} years old and eligible to vote.`;
+    } else {
+        const yearsLeft = votingAge - age;
+        resultDiv.className = "underage";
+        resultDiv.innerText = `❌ Access Denied. You are only ${age} years old. You can vote in ${yearsLeft} year(s).`;
+    }
+}
+</script>
+
+</body>
+</html>
